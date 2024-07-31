@@ -1,155 +1,231 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>嘿凡米表</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #222; /* 深色背景 */
-    color: #ddd; /* 浅色文字 */
-    padding: 20px;
-    text-align: center; /* 居中所有内容 */
-  }
-  .container {
-    max-width: 900px;
-    margin: 20px auto 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 30px 40px;
-  }
-  .module {
-    background-color: #333; /* 深色模块背景 */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: left; /* 模块内容左对齐 */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .module:hover {
-    transform: translateY(-5px); /* 鼠标悬停时向上移动5px */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 提升阴影效果 */
-  }
-  .module-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #007bff; /* 蓝色标题 */
-  }
-  .module-desc {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  .module-price {
-    font-size: 18px;
-    color: #4caf50; /* 绿色价格 */
-    font-weight: bold;
-  }
-  .contact-info {
-    font-size: 16px;
-    color: #ddd; /* 浅色文字 */
-    max-width: 600px;
-    margin: 40px auto 100px;
-    padding: 20px;
-    border-radius: 80px;
-    background-color: #333; /* 深色背景 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 阴影 */
-    text-align: left; /* 联系方式左对齐 */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .contact-info .title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4caf50;
-    margin-bottom: 10px;
-  }
-  .contact-info .contact-details {
-    text-align: left;
-  }
-  .contact-info .contact-details div {
-    margin-bottom: 10px;
-  }
-  .contact-info .contact-details span {
-    font-weight: bold;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘿凡米表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            /* 深色背景 */
+            color: #ddd;
+            /* 浅色文字 */
+            padding: 20px;
+            text-align: center;
+            /* 居中所有内容 */
+        }
 
-  @media (max-width: 768px) {
-    .container {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-  }
+        .container {
+            max-width: 900px;
+            margin: 20px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px 40px;
+        }
 
-  @media (max-width: 480px) {
-    .container {
-      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    }
-    .contact-info {
-      padding: 10px;
-      font-size: 14px;
-    }
-    .contact-info .title {
-      font-size: 20px;
-    }
-  }
-</style>
+        .module {
+            background-color: #333;
+            /* 深色模块背景 */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            /* 模块内容左对齐 */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .module:hover {
+            transform: translateY(-5px);
+            /* 鼠标悬停时向上移动5px */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            /* 提升阴影效果 */
+        }
+
+        .module-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #007bff;
+            /* 蓝色标题 */
+        }
+
+        .module-desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .module-price {
+            font-size: 18px;
+            color: #4caf50;
+            /* 绿色价格 */
+            font-weight: bold;
+        }
+
+        .contact-info {
+            font-size: 16px;
+            color: #ddd;
+            /* 浅色文字 */
+            max-width: 600px;
+            margin: 40px auto 100px;
+            padding: 20px;
+            border-radius: 80px;
+            background-color: #333;
+            /* 深色背景 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            /* 阴影 */
+            text-align: left;
+            /* 联系方式左对齐 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-info .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4caf50;
+            margin-bottom: 10px;
+        }
+
+        .contact-info .contact-details {
+            text-align: left;
+        }
+
+        .contact-info .contact-details div {
+            margin-bottom: 10px;
+        }
+
+        .contact-info .contact-details span {
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            }
+
+            .contact-info {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .contact-info .title {
+                font-size: 20px;
+            }
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+
+        footer a:hover {
+            color: #007bff;
+        }
+
+        .sold-out {
+            color: grey;
+            text-decoration: line-through;
+        }
+    </style>
 </head>
+
 <body>
-  
-  <div class="contact-info">
-    <div class="title">嘿凡米表</div>
-    <div class="contact-details">
-      <div class="title">联系方式</div>
-      <div>微信：<span style="font-weight: bold;">xizidev</span></div>
-      <div>邮箱：<span style="font-style: italic;">heifan@88.com</span></div>
-      <div>西部米店：<span style="font-color: gray;"><a href="https://www.west.cn/67890" target="_blank">67890</a></span></div>
+
+    <div class="contact-info">
+        <div class="title">嘿凡米表</div>
+        <div class="contact-details">
+            <div class="title">联系方式</div>
+            <div>微信：<span style="font-weight: bold;">xizidev</span></div>
+            <div>邮箱：<span style="font-style: italic;">heifan@88.com</span></div>
+            <div>西部米店：<span style="font-color: gray;"><a href="https://www.west.cn/67890"
+                        target="_blank">67890</a></span></div>
+        </div>
     </div>
-  </div>
 
-<div class="container" id="moduleContainer">
-  <!-- 动态插入模块列表 -->
-</div>
+    <div class="container" id="moduleContainer">
+        <!-- 动态插入模块列表 -->
+    </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // 假设这是从后端或其他来源获取的数据
-    var data = [
-      {"mi":"jieshu.net","price":300,"desc":"结束、借书、解暑、杰叔"},
-      {"mi":"sigui.net","price":350,"desc":"死鬼、死贵、思归"},
-      {"mi":"niuba.net","price":350,"desc":"牛吧、牛巴"},
-      {"mi":"lutie.net","price":300,"desc":"撸铁，适合做健身类网站"},
-      {"mi":"yydi.net","price":50,"desc":"音乐、运营、优雅、英语帝/弟"},
-      {"mi":"doi.cx","price":88,"desc":"doi、zuoi"},
-    ];
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var data = [
+                { "mi": "jieshu.net", "price": 300, "desc": "结束、借书、解暑、杰叔" },
+                { "mi": "sigui.net", "price": "已售出", "desc": "死鬼、死贵、思归" },
+                { "mi": "niuba.net", "price": 350, "desc": "牛吧、牛巴" },
+                { "mi": "lutie.net", "price": 300, "desc": "撸铁，适合做健身类网站" },
+                { "mi": "yydi.net", "price": 50, "desc": "音乐、运营、优雅、英语帝/弟" },
+                { "mi": "doi.cx", "price": 88, "desc": "doi、zuoi" },
+            ];
 
-    var container = document.getElementById('moduleContainer');
+            var container = document.getElementById('moduleContainer');
 
-    data.forEach(function(item) {
-      var moduleDiv = document.createElement('div');
-      moduleDiv.classList.add('module');
+            data.forEach(function (item) {
+                var moduleDiv = document.createElement('div');
+                moduleDiv.classList.add('module');
 
-      var titleDiv = document.createElement('div');
-      titleDiv.classList.add('module-title');
-      titleDiv.textContent = item.mi;
-      moduleDiv.appendChild(titleDiv);
+                var titleDiv = document.createElement('div');
+                titleDiv.classList.add('module-title');
+                titleDiv.textContent = item.mi;
+                if (item.price === '已售出') {
+                    titleDiv.classList.add('sold-out');
 
-      var descDiv = document.createElement('div');
-      descDiv.classList.add('module-desc');
-      descDiv.textContent = item.desc;
-      moduleDiv.appendChild(descDiv);
+                }
+                moduleDiv.appendChild(titleDiv);
 
-      var priceDiv = document.createElement('div');
-      priceDiv.classList.add('module-price');
-      priceDiv.textContent = "价格：" + item.price + " 元";
-      moduleDiv.appendChild(priceDiv);
+                var descDiv = document.createElement('div');
+                descDiv.classList.add('module-desc');
+                descDiv.textContent = item.desc;
+                moduleDiv.appendChild(descDiv);
 
-      container.appendChild(moduleDiv);
-    });
-  });
-</script>
+                var priceDiv = document.createElement('div');
+                priceDiv.classList.add('module-price');
+                if (item.price === '已售出') {
+                    priceDiv.textContent = "已售出";
+                } else {
+                    priceDiv.textContent = "价格：" + item.price + " 元";
+                }
 
+                moduleDiv.appendChild(priceDiv);
+
+                container.appendChild(moduleDiv);
+            });
+        });
+    </script>
+    <footer>
+        <p>版权所有 © 2024 嘿凡米表. All rights reserved.</p>
+        <ul>
+            <li><a href="http://zhime.net/" target="_blank">ZHIME米表</a></li>
+        </ul>
+    </footer>
 </body>
+
 </html>
