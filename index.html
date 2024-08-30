@@ -210,6 +210,8 @@
                 priceDiv.classList.add('module-price');
                 if (item.price === '已售出') {
                     priceDiv.textContent = "已售出";
+                } else if (item.price === '已掉落') {
+                    priceDiv.textContent = "已掉落";
                 } else {
                     priceDiv.textContent = "价格：" + item.price + " 元";
                 }
