@@ -195,7 +195,7 @@
                 var titleDiv = document.createElement('div');
                 titleDiv.classList.add('module-title');
                 titleDiv.textContent = item.mi;
-                if (item.price === '已售出') {
+                if (item.price === '已售出' || item.price === '已掉落') {
                     titleDiv.classList.add('sold-out');
 
                 }
